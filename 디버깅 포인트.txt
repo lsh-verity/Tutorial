@@ -1,0 +1,65 @@
+[디버깅 포인트]
+
+- SafeTlib
+	-> TstM_TestResults
+	-> SMU_INT0_ISR
+	-> SafeWdgInt_Dbg
+	-> Smu_GetAlarmStatus
+	-> SAFEWDG_INT_DEBUG
+	-> EcuM_AL_DriverInitOne
+	-> SafeTLib_MainTask_Master_Runtime
+	-> RA_Stop
+	-> AppCbk_ErrorHandler
+	-> SafeTlib_main
+
+- Failsafe
+	-> stFsErrBuf
+
+- Diagnosis
+	-> Dem_PrimaryEventMemory
+	-> SwcDem_TestPhaseEnable
+	-> SwcDem_TestPhase
+
+
+core.ASSIGN 1. 2. 3.
+
+Dem_EventMemoryEntryType
+Dem_UdsStatusByteType
+
+
+  const uint8 AlarmGroup,
+  uint32* const AlarmStatus
+)
+{
+  Std_ReturnType RetVal;
+
+
+u8FsLockstepTestFlg
+
+AppDcm_CompareKey_L1
+
+#include "SWC_Failsafe_CAN_DEFINE.h"
+
+
+AF (1010_1111) : 에러 발생
+
+2E (0010_1110) : 에러 해소
+
+EC (1110_1100) : 에러 발생 후 리셋
+
+2C (0010_1100) : 에러 발생 후 리셋 후 해소
+                 에러 해소 후 리셋
+
+28 (0010_1000) : 에러 발생 후 리셋 후 해소 후 리셋
+	       : 에러 해소 후 리셋 후 리셋
+
+
+6C (0110_1100) : 
+
+68 (0110_1000) : 
+
+SecurityAccess Key : 5D 4F 2F E7
+
+
+AppDcm_ReadData_VINDataIdentifier
+AppDcm_WriteData_VINDataIdentifier
